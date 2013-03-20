@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:controls="http://java.sun.com/jsf/composite/controls">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><ui:insert name="title">Believers Resource</ui:insert></title>
+	<style type="text/css" media="all">@import "/css/styles.css";</style>
+	<link rel="stylesheet" type="text/css" href="/js/jwysiwyg/jquery.wysiwyg.css" media="screen" />
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/jwysiwyg/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="/js/jwysiwyg/controls/wysiwyg.link.js"></script>
+    
+    <script type="text/javascript" src="/js/jQuery.jPlayer.2.1.0/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="/js/jQuery.jPlayer.2.1.0/jplayer.playlist.min.js"></script>
+    
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-5003034-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+
+
+
+<body>
+   
+	<div id="wrapper">
+		<controls:header />
+		<div id="main">
+			<div class="w1">
+				<div class="w2">
+					<div class="main-holder">
+						<div class="main-frame">
+						    <ui:insert name="content" />
+                        </div>
+						<img src="/images/birds.png" width="92" height="105" alt="image description" class="birds" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<controls:footer />
+	</div>
+	
+</body>
+
+
+</html>

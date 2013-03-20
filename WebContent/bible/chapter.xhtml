@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:bible_controls="http://java.sun.com/jsf/composite/bible/controls"
+	xmlns:topics_controls="http://java.sun.com/jsf/composite/topics/controls"
+	xmlns:forum_controls="http://java.sun.com/jsf/composite/forum/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="title"><h:outputText value="#{bible_chapterBean.pageTitle}" /></ui:define>
+	<ui:define name="leftColumn">
+	    <div class="heading">
+		    <div class="heading-holder">
+		        <div style="float:right;width:20px;"><br /><h:outputText value="#{bible_chapterBean.listen}" escape="false"  /></div>
+			    <h2><h:outputText value="#{bible_chapterBean.name}" /></h2>
+			    <bible_controls:translation />
+		    </div>
+	    </div>
+	
+	    
+	    
+	    <div id="content">
+	        <div class="content-holder">
+	            
+	            <div class="block" id="relatedPassages">
+	                <ul class="post">
+	                    <h:outputText value="#{bible_chapterBean.output}" escape="false" />
+	                </ul>
+	            </div>
+	            
+	            <controls:comments controller="#{bible_chapterBean.commentsController}" />
+	        </div>
+	    </div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+		<controls:relatedImages controller="#{bible_chapterBean.relatedImagesController}" />
+    	<topics_controls:relatedTopics controller="#{bible_chapterBean.relatedTopicsController}" />
+    	<bible_controls:mobile  />
+    	<div id="playerHolder"></div>
+	</ui:define>
+	
+</ui:composition>
+</html>

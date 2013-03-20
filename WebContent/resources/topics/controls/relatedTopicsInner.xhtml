@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:composite="http://java.sun.com/jsf/composite"  xmlns:bible_controls="http://java.sun.com/jsf/composite/bible/controls" >
+	<composite:interface>
+		<composite:attribute name="controller" type="com.believersresource.web.topics.controls.RelatedTopicsController" required="true" />
+	</composite:interface>
+	<composite:implementation>
+		<div class="block-holder">
+			<div class="block-frame">
+				<div class="heading">
+					<h2><img src="/images/ico4.gif" width="20" height="23" alt="image description" />Related Topics</h2>
+				</div>
+				<ul class="related-list">
+		            <h:outputText value="#{cc.attrs.controller.output}" escape="false" />
+		        </ul>
+				<h:outputText value="#{cc.attrs.controller.seeAll}" escape="false" />
+			</div>
+		</div>
+	</composite:implementation>
+</html>

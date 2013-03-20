@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="com.believersresource.web">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="com.believersresource.data.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/com.believersresource.data/com.believersresource.data">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/com.believersresource.web/build/classes"/>
+        <property name="context-root" value="."/>
+    </wb-module>
+</project-modules>

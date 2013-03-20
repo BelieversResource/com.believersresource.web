@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="title">Believers Resource - Free Christian Resources</ui:define>
+	<ui:define name="leftColumn">
+	    <div class="heading">
+	        <div class="heading-holder">
+	            <h2>Welcome to Believers Resource</h2>
+	            <p>This is a community driven site where visitors control the content.  Every Bible verse is indexed with related topics, passages and commentary 
+	            voted on by the community.  All downloads are free for churches and individuals to use and are also submitted by our members.  As you use the site
+	            please take a moment to make it better for others by voting on the best content.</p>
+			    <br />
+	        </div>
+	    </div>
+	    <div id="content">
+	        <div class="content-holder">
+	        	<controls:popularPassages />
+	        </div>
+		</div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+    	<controls:popularDownloads />
+    	<controls:popularTopics />
+    	<controls:mobile />
+	</ui:define>
+	
+</ui:composition>
+</html>

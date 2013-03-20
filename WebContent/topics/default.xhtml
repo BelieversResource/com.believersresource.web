@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:bible_controls="http://java.sun.com/jsf/composite/bible/controls"
+	xmlns:p="http://primefaces.org/ui"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="title">Topical Bible Concordance</ui:define>
+	<ui:define name="leftColumn">
+	    <div class="heading">
+	        <div class="heading-holder">
+	            <h2>Topics</h2>
+			    <p>This is a community site where users help to build a topical concordance and list of related verses by submitting and voting on them.  Please take a moment to improve the site by voting as you use it.</p>
+			    <br />
+	        </div>
+	    </div>
+	    <div id="content">
+	        <div class="content-holder">
+	        	
+	        	<div class="block">
+	                <h3>Search for a Verse or Topic</h3>
+	                <ul class="post">
+	                <li>
+	                <h:form>
+	                    <h:inputText value="#{topics_defaultBean.searchText}" />
+    					<h:commandButton value="Submit" action="#{topics_defaultBean.search}" />
+	                </h:form>
+	                </li>
+	                </ul>
+	            </div>
+            
+	            <div class="block">
+		            <h3>Popular Topics</h3>
+	                <ul class="post">
+	                    <li>
+	                    	<p:dataGrid var="topic" value="#{topics_defaultBean.topics}" columns="4" paginator="false"  >
+								<h:outputLink value="/topics/#{topic.url}"><h:outputText value="#{topic.name}" escape="false" /></h:outputLink>
+	                    	</p:dataGrid>
+	                    </li>
+	                </ul>
+	            </div>
+	        	
+	        	
+	        </div>
+		</div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+    	<controls:popularDownloads />
+    	<bible_controls:mobile />
+	</ui:define>
+	
+</ui:composition>
+</html>

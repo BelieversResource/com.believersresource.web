@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="leftColumn">
+	        <ui:insert name="mainContent" />
+	        <h:outputText value="#{templates_controlPanelBean.output}" />
+	</ui:define>
+	<ui:define name="rightColumn">    
+	    <div class="block block1">
+			<div class="block-holder">
+			    <div class="block-frame">
+				    <div class="heading">
+					    <h2><img src="/images/ico4.gif" width="20" height="23" alt="image description" />Navigation</h2>
+				    </div>
+				    <ul class="related-list">
+		                <li><a href="/cp/">Edit Account</a></li>
+		            </ul>
+			    </div>
+		    </div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

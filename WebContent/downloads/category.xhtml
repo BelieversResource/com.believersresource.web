@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:downloads_controls="http://java.sun.com/jsf/composite/downloads/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="title"><h:outputText value="#{downloads_categoryBean.pageTitle}" /></ui:define>
+	<ui:define name="leftColumn">
+	    <div class="heading">
+	        <div class="heading-holder">
+	        	<downloads_controls:breadCrumb controller="#{downloads_categoryBean.breadCrumbController}" />
+	        	<h2><h:outputText value="#{downloads_categoryBean.category.name}" /></h2>
+	            <p><h:outputText value="#{downloads_categoryBean.category.description}" /></p>
+			    <br />
+	        </div>
+	    </div>
+	    <div id="content">
+	        <div class="content-holder">
+	        	<controls:downloadCategories controller="#{downloads_categoryBean.categoriesController}" />
+	        	<downloads_controls:downloadList controller="#{downloads_categoryBean.downloadListController}" />
+	        </div>
+		</div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+    	<downloads_controls:submitButton />
+    	<controls:popularDownloads />
+	</ui:define>
+	
+</ui:composition>
+</html>

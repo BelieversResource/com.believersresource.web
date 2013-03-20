@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:downloads_controls="http://java.sun.com/jsf/composite/downloads/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="title">Christian Downloads</ui:define>
+	<ui:define name="leftColumn">
+	    <div class="heading">
+	        <div class="heading-holder">
+	            <h2>Downloads</h2>
+	            <p>This section contains Christian resources that are free for both churches and individuals to use.  If you know of a quality free Christian resource
+	            please take a moment to <a href="/downloads/editdownload.aspx" onclick="return verifyLoggedIn();">submit it</a>.</p>
+			    <br />
+	        </div>
+	    </div>
+	    <div id="content">
+	        <div class="content-holder">
+	        	<controls:downloadCategories controller="#{downloads_defaultBean.categoriesController}" />
+	        </div>
+		</div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+    	<downloads_controls:submitButton />
+    	<controls:popularDownloads />
+	</ui:define>
+	
+</ui:composition>
+</html>

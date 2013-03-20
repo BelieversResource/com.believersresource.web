@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:downloads_controls="http://java.sun.com/jsf/composite/downloads/controls"
+	xmlns:topics_controls="http://java.sun.com/jsf/composite/topics/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="leftColumn">
+	    <div class="heading">
+	        <div class="heading-holder">
+	            <h2>Edit Download</h2><br />
+	        </div>
+	    </div>
+	    <div id="content">
+	        <div class="content-holder">
+	        
+	            <h:form>
+	            
+	                <div class="block">
+	                    <div class="paddedDiv">
+	                    	<h:inputHidden id="downloadId" value="#{downloads_editDownloadBean.downloadId}" />
+	                        Category:<br />
+	                        <h:selectOneListbox id="categories" value="#{downloads_editDownloadBean.categoryId}" style="height:200px;">
+							  <f:selectItems value="#{downloads_editDownloadBean.categoryList}" />
+							</h:selectOneListbox> 
+	                        <br /><br />
+	                        
+	                        Title:<br />
+	                        <h:inputText value="#{downloads_editDownloadBean.downloadTitle}" style="width:100%;" />
+	                        <br/><br/>
+	                        
+	                        Short Description:<br />
+	                        <h:inputText value="#{downloads_editDownloadBean.shortDescription}" style="width:100%;" />
+	                        <br/><br/>
+	                        
+	                        Description:<br />
+	                        <h:inputTextarea value="#{downloads_editDownloadBean.description}" style="width:100%;height:150px;" />
+	                        <br/><br/>
+	                        
+		    			</div>
+	                </div>
+	                
+	                <div class="block">
+	                    <h3>Links</h3>
+	                    
+	                    <div class="paddedDiv">
+							<table width="100%" class="editGrid">
+								<tr><td width="20%">Type</td><td width="30%">Name</td><td width="50%">Url</td></tr>
+								<tr>
+							        <td><h:selectOneMenu value="#{downloads_editDownloadBean.linkType1}"><f:selectItem itemValue="download" itemLabel="Download" /><f:selectItem itemValue="source" itemLabel="Source" /></h:selectOneMenu></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkName1}" style="width:100%;" /></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkUrl1}" style="width:100%;" /></td>
+							    </tr>
+							    <tr>
+							        <td><h:selectOneMenu value="#{downloads_editDownloadBean.linkType2}"><f:selectItem itemValue="download" itemLabel="Download" /><f:selectItem itemValue="source" itemLabel="Source" /></h:selectOneMenu></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkName2}" style="width:100%;" /></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkUrl2}" style="width:100%;" /></td>
+							    </tr>
+							    <tr>
+							        <td><h:selectOneMenu value="#{downloads_editDownloadBean.linkType3}"><f:selectItem itemValue="download" itemLabel="Download" /><f:selectItem itemValue="source" itemLabel="Source" /></h:selectOneMenu></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkName3}" style="width:100%;" /></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkUrl3}" style="width:100%;" /></td>
+							    </tr>
+							    <tr>
+							        <td><h:selectOneMenu value="#{downloads_editDownloadBean.linkType4}"><f:selectItem itemValue="download" itemLabel="Download" /><f:selectItem itemValue="source" itemLabel="Source" /></h:selectOneMenu></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkName4}" style="width:100%;" /></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkUrl4}" style="width:100%;" /></td>
+							    </tr>
+							    <tr>
+							        <td><h:selectOneMenu value="#{downloads_editDownloadBean.linkType5}"><f:selectItem itemValue="download" itemLabel="Download" /><f:selectItem itemValue="source" itemLabel="Source" /></h:selectOneMenu></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkName5}" style="width:100%;" /></td>
+							        <td><h:inputText value="#{downloads_editDownloadBean.linkUrl5}" style="width:100%;" /></td>
+							    </tr>
+							</table>
+						</div>
+	                    
+	                    <h:commandLink value="SUBMIT" action="#{downloads_editDownloadBean.submit}" styleClass="submit" />
+	                </div>
+	                
+	                
+				</h:form>   
+	        </div>
+	    </div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+		
+	</ui:define>
+	
+</ui:composition>
+</html>

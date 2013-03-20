@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:bible_controls="http://java.sun.com/jsf/composite/bible/controls"
+	xmlns:forum_controls="http://java.sun.com/jsf/composite/forum/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="title"><h:outputText value="#{topics_topicBean.pageTitle}" /></ui:define>
+	<ui:define name="leftColumn">
+	    <div class="heading">
+		    <div class="heading-holder">
+			    <h2>Biblical Resources about <h:outputText value="#{topics_topicBean.topicName}" /></h2>
+			    <br />
+			    <bible_controls:translation />
+		    </div>
+	    </div>
+	    <div id="content">
+	        <div class="content-holder">
+	            <bible_controls:relatedPassages controller="#{topics_topicBean.relatedPassagesController}" />
+	            <controls:comments controller="#{topics_topicBean.commentsController}" />
+	        </div>
+	    </div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+		<controls:relatedImages controller="#{topics_topicBean.relatedImagesController}" />
+		<forum_controls:relatedDiscussions controller="#{topics_topicBean.relatedDiscussionsController}" />
+    	<bible_controls:mobile />
+	</ui:define>
+	
+</ui:composition>
+</html>

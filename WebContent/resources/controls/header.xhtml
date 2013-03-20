@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:composite="http://java.sun.com/jsf/composite" >
+	<composite:interface></composite:interface>
+	<composite:implementation>
+		<div id="header">
+			<div class="header-frame">
+				<div class="header-holder">
+					<div class="panel">
+						<h:panelGroup rendered="#{templates_headerBean.showLogin}">
+						    <form class="register-form" action="#" id="register-form" onsubmit="return login();">
+							    <fieldset>
+								    <label for="email-field">Login:</label>
+								    <input class="text" id="email-field" type="text" value="email" />
+								    <input class="text password-field" id="password-field" type="password" value="password" />
+								    <input class="btn-sign" type="submit" value="SIGN IN" />
+		                            <a href="javascript:showRegister();">Not a member?</a><br />
+							    </fieldset>
+						    </form>
+						    <h:outputText value="#{templates_headerBean.facebook}" escape="false" />
+					    </h:panelGroup>
+					    <h:outputText value="#{templates_headerBean.welcome}" escape="false" />
+					</div>
+				</div>
+				<div class="nav-holder">
+					<form class="search-form" action="#" onsubmit="return search();">
+						<fieldset>
+							<div class="text">
+								<input class="search-field" id="search-field" type="text" value="Enter Keyword" />
+							</div>
+							<input class="btn-search" type="submit" value="Submit" />
+						</fieldset>
+					</form>
+					<ul id="nav">
+						<li><a href="/downloads/"><span>DOWNLOADS</span></a></li>
+						<li><a href="/bible/"><span>BIBLE</span></a></li>
+						<li><a href="/topics/"><span>TOPICS</span></a></li>
+						<li><a href="/forum/"><span>FORUM</span></a></li>
+					</ul>
+				</div>
+				<div class="socialHolder">
+		
+		
+		            <script type="text/javascript">
+		                (function() {
+		                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		                    po.src = 'https://apis.google.com/js/plusone.js';
+		                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		                })();
+		            </script>
+		
+				    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.believersresource.com%2F&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=196495897095367" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+		
+				    
+				</div>
+				
+			</div>
+			<h1 class="logo"><a href="/">Believers Resource</a></h1>
+		</div>
+	</composite:implementation>
+</html>

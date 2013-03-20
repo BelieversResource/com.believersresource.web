@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:downloads_controls="http://java.sun.com/jsf/composite/downloads/controls"
+	xmlns:topics_controls="http://java.sun.com/jsf/composite/topics/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/ControlPanelTemplate.xhtml">
+	<ui:define name="mainContent">
+	
+		<div class="heading">
+	        <div class="heading-holder">
+	            <h2>Edit Post</h2>
+	            <p>You may edit your forum posts and comments.  However, if someone else has already replied to your comment an asterisk will be displayed next to it that visitors may click to see the original text.</p>
+			    <br />
+	        </div>
+	    </div>
+	    
+	    <div id="content">
+	    	<h:form>
+	            <div class="content-holder">
+	                <div class="block">
+	                    <div style="margin:20px;">
+	                        <h2>Edit Post</h2>
+	                        <h:inputHidden id="commentId" value="#{cp_editPostBean.commentId}" />
+	                        <h:inputTextarea value="#{cp_editPostBean.body}" style="width:100%;height:200px;" styleClass="commentText" /><br/>
+	                        <h:commandLink value="SUBMIT" action="#{cp_editPostBean.submit}" styleClass="submit" />
+	                    </div>
+	                </div>
+	            </div>
+	        </h:form>
+	    </div>
+	    
+	    <script>loadWysiwyg();</script>
+    
+	</ui:define>
+</ui:composition>
+</html>

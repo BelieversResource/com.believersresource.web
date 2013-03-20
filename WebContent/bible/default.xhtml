@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:controls="http://java.sun.com/jsf/composite/controls"
+	xmlns:bible_controls="http://java.sun.com/jsf/composite/bible/controls"
+	>
+	
+<ui:composition template="/WEB-INF/templates/TwoColumn.xhtml">
+	<ui:define name="title">Bible Research Tool</ui:define>
+	<ui:define name="leftColumn">
+	    <div class="heading">
+	        <div class="heading-holder">
+	            <h2>Bible Research Tool</h2>
+	            <p>This is a community site where users help to build a topical concordance and list of related verses by submitting and voting on them. Please take a moment to improve the site by voting as you use it.</p>
+			    <br />
+			    <bible_controls:translation />
+	        </div>
+	    </div>
+	    <div id="content">
+	        <div class="content-holder">
+	            <div class="block">
+	                <h3>Search for a Verse or Topic</h3>
+	                <ul class="post">
+	                	<li>
+	                		<h:form>
+			                    <h:inputText value="#{bible_defaultBean.searchText}" />
+		    					<h:commandButton value="Submit" action="#{bible_defaultBean.search}" />
+			                </h:form>
+	                	</li>
+	                </ul>
+	            </div>
+	            <controls:popularPassages />
+	        </div>
+	    </div>
+	</ui:define>
+	
+	<ui:define name="rightColumn">
+		<controls:popularTopics />
+    	<bible_controls:mobile />
+	</ui:define>
+	
+</ui:composition>
+</html>

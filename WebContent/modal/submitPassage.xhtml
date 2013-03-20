@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	>
+	
+<ui:composition template="/WEB-INF/templates/ModalTemplate.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h:inputHidden id="contentId" value="#{modal_submitPassageBean.contentId}" />
+			<h:inputHidden id="contentType" value="#{modal_submitPassageBean.contentType}" />
+			
+			<table width="100%">
+		        <tr>
+		            <td>What passage would you like to submit?</td>
+		            <td><h:inputText value="#{modal_submitPassageBean.reference}" /></td>
+		            <td><h:commandButton value="Lookup" action="#{modal_submitPassageBean.lookup}" /></td>
+		        </tr>
+		    </table>
+			<h:panelGroup rendered="#{modal_submitPassageBean.showPassage}">
+				<p><h:outputText value="#{modal_submitPassageBean.passageText}" escape="false" /></p>
+				<h:commandButton value="Submit" action="#{modal_submitPassageBean.submit}" />
+			</h:panelGroup>
+			<h:outputText value="#{modal_submitPassageBean.output}" escape="false" />
+	    </h:form>
+	</ui:define>
+</ui:composition>
+</html>

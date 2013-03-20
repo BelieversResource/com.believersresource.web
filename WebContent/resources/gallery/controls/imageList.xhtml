@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:composite="http://java.sun.com/jsf/composite"  xmlns:topics_controls="http://java.sun.com/jsf/composite/topics/controls" xmlns:p="http://primefaces.org/ui" >
+	<composite:interface>
+		<composite:attribute name="controller" type="com.believersresource.web.gallery.controls.ImageListController" required="true" />
+	</composite:interface>
+	<composite:implementation>
+		<div class="paddedDiv">
+			<p:dataGrid var="image" value="#{cc.attrs.controller.images}" columns="4" paginator="false" styleClass="gallery"  >
+				<h:outputLink value="/gallery/image.xhtml?id=#{image.id}"><h:graphicImage url="http://www.believersresource.com/content/images/#{image.id}.#{image.extension}" style="width:150px;" /></h:outputLink><br/>
+				<div id="v_relatedimage_#{image.relatedImageId}" class="voteHolder info" style="padding-left:45px;" ><h:outputText value="#{image.votes}" escape="false" /></div>
+				<div class="clear"></div>
+				<h:outputLink value="/gallery/image.xhtml?id=#{image.id}"><div class="caption"><h:outputText value="#{image.title}" escape="false" /></div></h:outputLink>
+			</p:dataGrid>
+		</div>
+	</composite:implementation>
+</html>

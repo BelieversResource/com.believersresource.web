@@ -1,0 +1,9 @@
+﻿body{
+	margin:0;
+	background-color:#fbfbfb;
+	color:#333;
+	font:14px/17px Georgia, 'Times New Roman', Times, serif;
+}
+
+.error{color:#fe7806;font-weight:bold;}
+.success {color:#009900;}

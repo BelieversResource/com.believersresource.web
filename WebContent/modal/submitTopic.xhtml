@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	>
+	
+<ui:composition template="/WEB-INF/templates/ModalTemplate.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h:inputHidden id="contentId" value="#{modal_submitTopicBean.contentId}" />
+			<h:inputHidden id="contentType" value="#{modal_submitTopicBean.contentType}" />
+			
+			<table width="100%">
+		        <tr>
+		            <td>What topic would you like to submit?</td>
+		            <td><h:inputText value="#{modal_submitTopicBean.topicText}" /></td>
+		            <td><h:commandButton value="Submit" action="#{modal_submitTopicBean.submit}" /></td>
+		        </tr>
+		    </table>
+			<h:panelGroup rendered="#{modal_submitTopicBean.showConfirm}">
+				<p>This is a new topic that we are not currently tracking.  Please check your spelling and click
+				<h:commandLink value="confirm" action="#{modal_submitTopicBean.confirm}" /> if you wish to add it.</p>
+			</h:panelGroup>
+			<h:outputText value="#{modal_submitTopicBean.error}" escape="false" />
+	    </h:form>
+	</ui:define>
+</ui:composition>
+</html>

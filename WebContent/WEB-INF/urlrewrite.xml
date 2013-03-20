@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<!--
+
+    Configuration file for UrlRewriteFilter
+    http://www.tuckey.org/urlrewrite/
+
+-->
+<urlrewrite>
+
+<!-- dev    
+    <rule>
+        <from>/downloads/([^/]*).html</from>
+        <to>%{context-path}/downloads/download.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/downloads/categories/(.*).html</from>
+        <to>%{context-path}/downloads/category.xhtml?url=$1.html</to>
+    </rule>
+    <rule>
+        <from>/bible/([0-9A-Za-z_]*-[0-9]*).html</from>
+        <to>%{context-path}/bible/chapter.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/bible/([0-9A-Za-z_\-]*[0-9]{1,3}-.*).html</from>
+        <to>%{context-path}/bible/passage.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/topics/(.*).html</from>
+        <to>%{context-path}/topics/topic.xhtml?url=$1.html</to>
+    </rule>
+    <rule>
+        <from>/forum/(.*).html</from>
+        <to>%{context-path}/forum/thread.xhtml?url=$1.html</to>
+    </rule>
+    <rule>
+        <from>/gallery/([^-]*).html</from>
+        <to>%{context-path}/gallery/topic.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/gallery/(.*-.*).html</from>
+        <to>%{context-path}/gallery/passage.xhtml?url=$1.html</to>
+    </rule>
+ -->
+
+    <rule>
+        <from>/downloads/([^/]*).html</from>
+        <to>/downloads/download.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/downloads/categories/(.*).html</from>
+        <to>/downloads/category.xhtml?url=$1.html</to>
+    </rule>
+    <rule>
+        <from>/bible/([0-9A-Za-z_]*-[0-9]*).html</from>
+        <to>/bible/chapter.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/bible/([0-9A-Za-z_\-]*[0-9]{1,3}-.*).html</from>
+        <to>/bible/passage.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/topics/(.*).html</from>
+        <to>/topics/topic.xhtml?url=$1.html</to>
+    </rule>
+    <rule>
+        <from>/forum/(.*).html</from>
+        <to>/forum/thread.xhtml?url=$1.html</to>
+    </rule>
+    <rule>
+        <from>/gallery/([^-]*).html</from>
+        <to>/gallery/topic.xhtml?url=$1.html</to>
+    </rule>
+	<rule>
+        <from>/gallery/(.*-.*).html</from>
+        <to>/gallery/passage.xhtml?url=$1.html</to>
+    </rule> 
+ 	<rule>
+        <from>/pages/(.*).html</from>
+        <to>/pages/page.xhtml?url=$1.html</to>
+    </rule>
+</urlrewrite>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	>
+	
+<ui:composition template="/WEB-INF/templates/ModalTemplate.xhtml">
+	<ui:define name="content">
+		<h:form>
+		    <h:outputText value="#{modal_registerBean.errors}" escape="false" />
+		    <table align="center" cellpadding="4" cellspacing="0">
+		        <tr><td align="right">Display Name:</td><td><h:inputText value="#{modal_registerBean.displayName}" /></td></tr>
+		        <tr><td align="right">Email:</td><td><h:inputText value="#{modal_registerBean.email}" /></td></tr>
+		        <tr><td align="right">Password:</td><td><h:inputSecret value="#{modal_registerBean.password}" /></td></tr>
+		        <tr><td align="right">Verify Password:</td><td><h:inputSecret value="#{modal_registerBean.passwordVerify}" /></td></tr>
+		        <tr><td colspan="2" align="center"><h:commandButton value="Submit" action="#{modal_registerBean.submit}" /></td></tr>
+		    </table>
+	    </h:form>
+	</ui:define>
+</ui:composition>
+</html>
